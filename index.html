@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Time and date </title>
+</head>
+
+<body onload="update_time()" >
+<div id="Date" >Data </div><br>
+<div id="Time">Time </div>
+
+<script type="application/javascript">
+let now = new Date();
+var month = now.getMonth() + 1;
+var date = now.getDate() + "-" + month + "-" + now.getFullYear();
+var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+function update_time() 
+{
+    now = new Date();
+    month = now.getMonth() + 1;
+    date = now.getDate() + "-" + month + "-" + now.getFullYear();
+    time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+    document.getElementById("Date").innerHTML = date ;
+    document.getElementById("Time").innerHTML = time ;
+    var t = setTimeout(update_time, 1000);
+}
+</script>
+
+</body>
+</html>
